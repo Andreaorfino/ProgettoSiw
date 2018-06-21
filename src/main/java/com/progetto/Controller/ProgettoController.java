@@ -140,17 +140,17 @@ public class ProgettoController{
 
 
 
-	@RequestMapping("/inizializza")
+	@RequestMapping("/inizio")
 	public String inizializza(Model model)
 	{
 		if(allievoServices.getAllievi().isEmpty()) {
-			Centro centro = new Centro("SF united","sfCentro@emma.it", "roma", 33578953, 100);
+			Centro centro = new Centro("CCentro","CCentro@emma.it", "roma", 3678382, 10);
 			centroServices.save(centro);
-			responsabileService.save(new Responsabile("pass", "lorenzo", "pratico", "amministratore", centro));
-			corsoServices.AggiungiCorso("matematica", "12/12/18", java.sql.Time.valueOf("12:00:00"), centro);
-			corsoServices.AggiungiCorso("italiano", "12/12/18", java.sql.Time.valueOf("13:00:00"), centro);
-			allievoServices.AggiungiAllievo("luca", "monaco", "roma", "12/12/96", "luke@gmail.com",
-					centro, "pass", "3347995318", "luke");
+			responsabileService.save(new Responsabile("test", "Francesco", "ludovichi", "amministratore", centro));
+			corsoServices.AggiungiCorso("programmazione", "01/01/01", java.sql.Time.valueOf("10:00:00"), centro);
+
+			allievoServices.AggiungiAllievo("andrea", "orfino", "roma", "26/03/96", "andreaorfino.263@gmail.com",centro, "pass", "3347995318", "user");
+			corsoServices.AggiungiCorso("algebra", "02/02/02", java.sql.Time.valueOf("11:00:00"), centro);
 		}
 		
 		List<Allievo> alliev = (List<Allievo>) allievoServices.RestituisciTutti();
