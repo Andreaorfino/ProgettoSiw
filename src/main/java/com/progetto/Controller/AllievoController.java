@@ -31,6 +31,7 @@ public class AllievoController{
 	@RequestMapping("/registraAllievo")
 	public String FormAggiungiAllievo()
 	{
+		System.out.println("a");
 		return "AllieviRegistrati";
 	}
 
